@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Форма отправки данных</title>
+</head>
+<body>
+
+<h2>Введите ваши данные</h2>
+
+<form id="myForm">
+  <label for="name">Имя:</label>
+  <input type="text" id="name" name="name" required /><br /><br />
+
+  <label for="surname">Фамилия:</label>
+  <input type="text" id="surname" name="surname" required /><br /><br />
+
+  <button type="submit">Отправить</button>
+</form>
+
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // предотвращаем стандартную отправку формы
+
+    const name = document.getElementById('name').value;
+    const data = {
+      name: name,
+      surname: surname
+    };
+
+    // отправляем данные на сервер (замените URL на ваш)
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Ошибка сети');
+      }
+      return response.json();
+    })
+    .then(result => {
+      alert('Данные успешно отправлены!');
+      console.log(result);
+    })
+    .catch(error => {
+      alert('Произошла ошибка при отправке данных.');
+      console.error(error);
+    });
+  });
+</script>
+
+</body>
+</html>
