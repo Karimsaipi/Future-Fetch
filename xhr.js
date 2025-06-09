@@ -15,3 +15,8 @@ const body = {
     name: 'karim',
     age: 24,
 }
+
+const body3 = {
+    name: 'karim',
+    age: 24,
+}
