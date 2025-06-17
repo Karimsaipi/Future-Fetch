@@ -1,3 +1,10 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { App } from '../components/App';
+
+const root = createRoot(document.getElementById('root')!);
+root.render(<App />);
+
 // /* ПОСЧИТАТЬ СУММУ ДВУХ ЧИСЕЛ (ФУНКЦИЯ ПРИНИМАЕТ 2 ЧИСЛА, ВОЗВРАЩАЕТ ИХ СУММУ) */
 // /* ФУНКЦИЯ ПРИНИМАЕТ ЧИСЛО И ОПРЕДЕЛЕЯЕТ ЯВЛЯЕТСЯ ЛИ ОНО ЦЕЛЫМ */
 // /* ФУНКЦИЯ ПРИНИМАЕТ ЧИСЛО И ПРИНИМАЕТ ЧЕТНОЕ ЛИ ОНО  */
@@ -532,210 +539,210 @@
 // console.log(microwave.currentTemperature);
 
 
-function CarJapan(brand, model, turbo, hp, acceleration) {
-  if(brand !== 'honda' && brand !== 'mazda' && brand !== 'toyota' && brand !== 'mitsubishi'){
-    return ('Error! Car brand must be from Japan and not luxury');
-  }
-  if(typeof turbo !== 'boolean'){
-    return ('Error! Argument turbo must be a boolean');
-  }
-  if(typeof model !== 'string') {
-    return ('Error! Argument model must be a string');
-  }
-  if(typeof hp !== 'number') {
-    return ('Error! Argument hp must be a number');
-  }
-  if(typeof acceleration !== 'number') {
-    return ('Error! Argument hp must be a number');
-  }
-  this.brand = brand;
-  this.model = model;
-  this.turbo = turbo;
-  this.hp = hp;
-  this.acceleration = acceleration;
+// function CarJapan(brand, model, turbo, hp, acceleration) {
+//   if(brand !== 'honda' && brand !== 'mazda' && brand !== 'toyota' && brand !== 'mitsubishi'){
+//     return ('Error! Car brand must be from Japan and not luxury');
+//   }
+//   if(typeof turbo !== 'boolean'){
+//     return ('Error! Argument turbo must be a boolean');
+//   }
+//   if(typeof model !== 'string') {
+//     return ('Error! Argument model must be a string');
+//   }
+//   if(typeof hp !== 'number') {
+//     return ('Error! Argument hp must be a number');
+//   }
+//   if(typeof acceleration !== 'number') {
+//     return ('Error! Argument hp must be a number');
+//   }
+//   this.brand = brand;
+//   this.model = model;
+//   this.turbo = turbo;
+//   this.hp = hp;
+//   this.acceleration = acceleration;
 
-  this.installTurbine = function () {
-    if(turbo === true) {
-      return ('This model already has a turbine');
-    } else {
-      this.turbo = true;
-    }
-  }
+//   this.installTurbine = function () {
+//     if(turbo === true) {
+//       return ('This model already has a turbine');
+//     } else {
+//       this.turbo = true;
+//     }
+//   }
 
-  this.installFirmware = function () {
-    if(this.turbo === true) {
-      this.hp = this.hp + (this.hp/100 * 5);
-      this.acceleration = this.acceleration - (this.acceleration / 100 * 3);
-    } else { 
-      this.hp = this.hp + (this.hp/100 * 2);
-      this.acceleration = this.acceleration - (this.acceleration / 100 * 1);
-    }
-  }
-}
+//   this.installFirmware = function () {
+//     if(this.turbo === true) {
+//       this.hp = this.hp + (this.hp/100 * 5);
+//       this.acceleration = this.acceleration - (this.acceleration / 100 * 3);
+//     } else { 
+//       this.hp = this.hp + (this.hp/100 * 2);
+//       this.acceleration = this.acceleration - (this.acceleration / 100 * 1);
+//     }
+//   }
+// }
 
-let a = new CarJapan('honda', 'lancer', true, 320, 6.5);
-a.installFirmware();
-console.log(a);
+// let a = new CarJapan('honda', 'lancer', true, 320, 6.5);
+// a.installFirmware();
+// console.log(a);
 
-function Microwave (width, height, material, maxPower) {
-  if(typeof width !== 'number'){
-    return ('Error! Argument width must be a number');
-  }
-  if(typeof height !== 'number'){
-    return ('Error! Argument height must be a number');
-  }
-  if(typeof material !== 'string'){
-    return ('Error! Argument material must be a string');
-  }
-  if(typeof maxPower !== 'number'){
-    return ('Error! Argument maxPower must be a number');
-  }
-  this.width = width;
-  this.height = height;
-  this.material = material;
-  this.maxPower = maxPower;
+// function Microwave (width, height, material, maxPower) {
+//   if(typeof width !== 'number'){
+//     return ('Error! Argument width must be a number');
+//   }
+//   if(typeof height !== 'number'){
+//     return ('Error! Argument height must be a number');
+//   }
+//   if(typeof material !== 'string'){
+//     return ('Error! Argument material must be a string');
+//   }
+//   if(typeof maxPower !== 'number'){
+//     return ('Error! Argument maxPower must be a number');
+//   }
+//   this.width = width;
+//   this.height = height;
+//   this.material = material;
+//   this.maxPower = maxPower;
 
-  this.timer = 0;
-  this.isActive = false;
+//   this.timer = 0;
+//   this.isActive = false;
 
-  this.start = function(duration) {
-    this.timer = duration;
-    this.isActive = true;
-  }
+//   this.start = function(duration) {
+//     this.timer = duration;
+//     this.isActive = true;
+//   }
 
-  this.stop = function() {
-    this.timer = 0;
-    this.isActive = false;
-  }
+//   this.stop = function() {
+//     this.timer = 0;
+//     this.isActive = false;
+//   }
 
-}
+// }
 
-let samsungWave = new Microwave(30, 20, 'steel', 650);
-samsungWave.start(50);
-console.log(samsungWave);
+// // let samsungWave = new Microwave(30, 20, 'steel', 650);
+// samsungWave.start(50);
+// console.log(samsungWave);
 
-function User (name, height, weight, myopia, beard) {
-  if(typeof name !== 'string'){
-    return ('Error! Argument name must be a string');
-  }
-  if(typeof height !== 'number'){
-    return ('Error! Argument height must be a number');
-  }
-  if(typeof weight !== 'number'){
-    return ('Error! Argument weight must be a number');
-  }
-  if(typeof myopia !== 'boolean'){
-    return ('Error! Argument myopia must be a boolean');
-  }
-  if(typeof beard !== 'boolean'){
-    return ('Error! Argument boolean must be a boolean');
-  }
+// function User (name, height, weight, myopia, beard) {
+//   if(typeof name !== 'string'){
+//     return ('Error! Argument name must be a string');
+//   }
+//   if(typeof height !== 'number'){
+//     return ('Error! Argument height must be a number');
+//   }
+//   if(typeof weight !== 'number'){
+//     return ('Error! Argument weight must be a number');
+//   }
+//   if(typeof myopia !== 'boolean'){
+//     return ('Error! Argument myopia must be a boolean');
+//   }
+//   if(typeof beard !== 'boolean'){
+//     return ('Error! Argument boolean must be a boolean');
+//   }
 
-  this.name = name;
-  this.height = height;
-  this.weight = weight;
-  this.myopia = myopia;
-  this.beard = beard;
+//   this.name = name;
+//   this.height = height;
+//   this.weight = weight;
+//   this.myopia = myopia;
+//   this.beard = beard;
 
-  this.makeCorrection = function() {
-    if(this.myopia = false) {
-      return ('Vision is already excellent');
-    } 
-    this.myopia = false;
-  }
+//   this.makeCorrection = function() {
+//     if(this.myopia = false) {
+//       return ('Vision is already excellent');
+//     } 
+//     this.myopia = false;
+//   }
 
-  this.getShaved = function() {
-    if(this.beard = false) {
-      return ('he is already clean shaven');
-    }
-    this.beard = false;
-  }
-}
+//   this.getShaved = function() {
+//     if(this.beard = false) {
+//       return ('he is already clean shaven');
+//     }
+//     this.beard = false;
+//   }
+// }
 
-const sanya = new User('sanya', 182, 84, true, true);
-console.log(sanya);
-sanya.makeCorrection();
-console.log(sanya);
+// const sanya = new User('sanya', 182, 84, true, true);
+// console.log(sanya);
+// sanya.makeCorrection();
+// console.log(sanya);
 
-function Animal(type, name, legs, color, eyes) {
-  if(typeof type !== 'string'){
-    return ('Error! Argument type must be a string');
-  }
-  if(typeof name !== 'string'){
-    return ('Error! Argument name must be a string');
-  }
-  if(typeof legs !== 'number'){
-    return ('Error! Argument legs must be a number');
-  }
-  if(typeof color !== 'string'){
-    return ('Error! Argument color must be a string');
-  }
-  if(typeof eyes !== 'number'){
-    return ('Error! Argument myopia must be a boolean');
-  }
+// function Animal(type, name, legs, color, eyes) {
+//   if(typeof type !== 'string'){
+//     return ('Error! Argument type must be a string');
+//   }
+//   if(typeof name !== 'string'){
+//     return ('Error! Argument name must be a string');
+//   }
+//   if(typeof legs !== 'number'){
+//     return ('Error! Argument legs must be a number');
+//   }
+//   if(typeof color !== 'string'){
+//     return ('Error! Argument color must be a string');
+//   }
+//   if(typeof eyes !== 'number'){
+//     return ('Error! Argument myopia must be a boolean');
+//   }
  
-  this.type = type;
-  this.legs = legs;
-  this.color = color;
-  this.eyes = eyes;
-  this.name = name;
+//   this.type = type;
+//   this.legs = legs;
+//   this.color = color;
+//   this.eyes = eyes;
+//   this.name = name;
 
-  this.children = [];
-  this.stomach = [];
+//   this.children = [];
+//   this.stomach = [];
 
-  this.doChild = function(name) {
-    this.children.push(new Animal(this.type, name, this.legs, this.color, this.eyes));
-  }
+//   this.doChild = function(name) {
+//     this.children.push(new Animal(this.type, name, this.legs, this.color, this.eyes));
+//   }
 
-  this.eat = function(food) {
-    this.stomach.push(food);
-  }
-}
+//   this.eat = function(food) {
+//     this.stomach.push(food);
+//   }
+// }
 
-const tiger = new Animal('tiger', 'barsik', 4, 'orange', 2);
-tiger.doChild('alex');
-tiger.eat('meat', 'fish');
-console.log(tiger);
+// const tiger = new Animal('tiger', 'barsik', 4, 'orange', 2);
+// tiger.doChild('alex');
+// tiger.eat('meat', 'fish');
+// console.log(tiger);
 
-let mc = 1e10;
-console.log(mc);
+// let mc = 1e10;
+// console.log(mc);
 
 
-function sumInput() {
+// function sumInput() {
 
-  let numbers = [];
+//   let numbers = [];
 
-  while (true) {
+//   while (true) {
 
-    let value = prompt("Введите число", 0);
+//     let value = prompt("Введите число", 0);
 
-    // Прекращаем ввод?
-    if (value === "" || value === null || !isFinite(value)) break;
+//     // Прекращаем ввод?
+//     if (value === "" || value === null || !isFinite(value)) break;
 
-    numbers.push(+value);
-  }
+//     numbers.push(+value);
+//   }
 
-  let sum = 0;
-  for (let number of numbers) {
-    sum += number;
-  }
-  return sum;
-}
+//   let sum = 0;
+//   for (let number of numbers) {
+//     sum += number;
+//   }
+//   return sum;
+// }
 
-alert( sumInput() );
+// alert( sumInput() );
 
-function getMaxSubSum(arr) {
-  let maxSum = 0;
-  let partialSum = 0;
+// function getMaxSubSum(arr) {
+//   let maxSum = 0;
+//   let partialSum = 0;
 
-  for (let item of arr) { // для каждого элемента массива
-    partialSum += item; // добавляем значение элемента к partialSum
-    maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
-    if (partialSum < 0) partialSum = 0; // ноль если отрицательное
-  }
+//   for (let item of arr) { // для каждого элемента массива
+//     partialSum += item; // добавляем значение элемента к partialSum
+//     maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
+//     if (partialSum < 0) partialSum = 0; // ноль если отрицательное
+//   }
 
-  return maxSum;
-}
+//   return maxSum;
+// }
 
 /**
   * Описание задачи: Напишите функцию, которая заполняет новый массив предоставленным значением.
@@ -788,7 +795,7 @@ console.log(usersAgeOlderType);
 const numbers = [526, 42, 67, 183, 16, 81, 51, 21, 11];
 const numbersAbove50 = numbers.filter(item => item > 50);
 
-const compareFn = (a, b) => a - b;
+const compareFn = (a: any, b: any) => a - b;
 const numbersAbove50Sort = numbersAbove50.sort(compareFn);
 
 console.log(numbersAbove50Sort);
@@ -884,3 +891,34 @@ set.add(10).add(20)
 
 console.log(set);
 
+document.getElementById('myForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = (document.getElementById('name') as HTMLInputElement).value;
+  const surname = (document.getElementById('surname') as HTMLInputElement).value;
+
+  const data = {
+    name: name,
+    surname: surname,
+  };
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Ошибка сети');
+    return response.json();
+  })
+  .then(result => {
+    alert('Данные успешно отправлены!');
+    console.log(result);
+  })
+  .catch(error => {
+    alert('Произошла ошибка при отправке данных.');
+    console.error(error);
+  });
+});
