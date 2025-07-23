@@ -1,0 +1,19 @@
+@use '/styles/helpers/' as *;
+
+.badge {
+    display: inline-flex;
+    padding: fluid(4, 2) fluid(14, 10);
+    border-radius: rem(6);
+    font-size: rem(16);
+    color: var(--color-light);
+    border: 1px solid transparent;
+    background:
+        linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box,
+        linear-gradient(45deg, var(--color-dark-15) 64%, var(--color-accent) 130%) border-box;
+    border-radius: 8px; 
+
+    @include laptop {
+        font-size: rem(14);
+        border-radius: rem(4);
+    }
+}

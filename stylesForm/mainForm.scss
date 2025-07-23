@@ -1,0 +1,87 @@
+@use '../styles/helpers/' as *;
+@use '../styles/variables' as *;
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    font-family: var(--font-family-base);
+    background-color: var(--color-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrapper {
+    padding: rem(10);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    width: rem(600);
+    padding: 2rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 10px;
+    background-color: var(--color-dark-20);
+    position: relative;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color:var(--color-light);
+}
+
+.form__input,
+.form__textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: rem(7);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+}
+
+.form__button {
+    padding: 0.75rem;
+    background-color: var(--color-accent);
+    font-weight: 500;
+    color: var(--color-dark);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    cursor: pointer;
+    
+    @include hover {
+        color: var(--color-accent);
+        background-color: var(--color-dark-10);
+        border-color: var(--color-accent);
+        border: 1px solid var(--color-accent);
+    }
+}
+
+.close {
+    margin-left: auto;
+    max-width: 15%;
+    min-width: 15%;
+    padding: rem(10);
+    gap: rem(5);
+}
+
+.result {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    white-space: pre-wrap;
+    color: var(--color-red);
+    background-color: var(--color-dark);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+    z-index: 9999; 
+}

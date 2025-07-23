@@ -10,14 +10,26 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 module.exports = (env) => {
   return {
     mode: env.mode ?? 'development',
-    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    entry: {
+      index: path.resolve(__dirname, 'src', 'main.ts'),
+      form: path.resolve(__dirname, 'srcForm', 'formMain.ts')
+     },
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].js',
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') }),
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.resolve(__dirname, 'index.html'),
+        chunks: ['index'], // подключаем только index.ts
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'form.html',
+        template: path.resolve(__dirname, 'form.html'),
+        chunks: ['form'], // подключаем только form.ts
+      }),
       new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin(),
       new webpack.DefinePlugin({__PLATFORM__: JSON.stringify(process.env.PLATFORM || 'desktop')}),
